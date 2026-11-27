@@ -62,3 +62,5 @@ obj-$(CONFIG_CXL_BASE)		+= cxl/
 obj-$(CONFIG_UID_CPUTIME) += uid_cputime.o
 obj-$(CONFIG_MEDIATEK_SOLUTION)	+= mediatek/
 obj-$(CONFIG_TYPEC_DRIVER)	+= type-c/
+
+obj-$(CONFIG_UID_SYS_STATS) += uid_sys_stats.o

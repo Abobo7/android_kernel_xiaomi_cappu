@@ -540,4 +540,14 @@ source "drivers/misc/echo/Kconfig"
 source "drivers/misc/cxl/Kconfig"
 source "drivers/misc/mediatek/Kconfig"
 source "drivers/misc/type-c/Kconfig"
+
+config UID_SYS_STATS
+	bool "Per-UID statistics"
+	depends on PROFILING && TASK_XACCT && TASK_IO_ACCOUNTING
+
+config UID_SYS_STATS_DEBUG
+	bool "Per-UID statistics debugging"
+	depends on UID_SYS_STATS
+	default n
+
 endmenu
