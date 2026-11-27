@@ -524,12 +524,6 @@ out:
 }
 #endif
 
-static int sdcardfs_permission_wrn(struct inode *inode, int mask)
-{
-	WARN_RATELIMIT(1, "sdcardfs does not support permission. Use permission2.\n");
-	return -EINVAL;
-}
-
 void copy_attrs(struct inode *dest, const struct inode *src)
 {
 	dest->i_mode = src->i_mode;
@@ -582,12 +576,6 @@ static int sdcardfs_permission(struct vfsmount *mnt, struct inode *inode, int ma
 		pr_warn("%s: This may be undefined behavior...\n", __func__);
 	err = generic_permission(&tmp, mask);
 	return err;
-}
-
-static int sdcardfs_setattr_wrn(struct dentry *dentry, struct iattr *ia)
-{
-	WARN_RATELIMIT(1, "sdcardfs does not support setattr. User setattr2.\n");
-	return -EINVAL;
 }
 
 static int sdcardfs_setattr(struct vfsmount *mnt, struct dentry *dentry, struct iattr *ia)
