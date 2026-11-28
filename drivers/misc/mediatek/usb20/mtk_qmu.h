@@ -27,7 +27,7 @@
 #define GPD_LEN_ALIGNED (64)	/* > gpd len (16) and cache line size aligned */
 #define GPD_EXT_LEN (48)	/* GPD_LEN_ALIGNED - 16(should be sizeof(TGPD) */
 #define GPD_SZ (16)
-#define DFT_MAX_GPD_NUM 36
+#define DFT_MAX_GPD_NUM 512
 #define RXQ_NUM 8
 #define TXQ_NUM 8
 #define MAX_QMU_EP RXQ_NUM
