@@ -85,16 +85,13 @@ unsigned int gUltraEnable = 1;
 unsigned int gDumpMemoutCmdq = 0;
 unsigned int gEnableUnderflowAEE = 0;
 
-#ifdef CONFIG_MTK_TC8_TABLET_RELEASE_ONLY
-unsigned int disp_low_power_reduse_fps = 1;
-#else
+/* Cappu Dual-DSI QXGA anti-flicker: disable idle VFP=200 porch-shift & DIRECT_LINK<->DECOUPLE switch */
 unsigned int disp_low_power_reduse_fps = 0;
-#endif
 unsigned int disp_low_power_reduse_clock = 0;
 unsigned int disp_low_power_adjust_vfp = 0;
-unsigned int disp_low_power_disable_ddp_clock = 1;
-unsigned int disp_low_power_remove_ovl = 1;
-unsigned int gSkipIdleDetect = 0;
+unsigned int disp_low_power_disable_ddp_clock = 0;
+unsigned int disp_low_power_remove_ovl = 0;
+unsigned int gSkipIdleDetect = 1;
 unsigned int gDumpClockStatus = 1;
 
 #ifdef CONFIG_MTK_SEC_VIDEO_PATH_SUPPORT
